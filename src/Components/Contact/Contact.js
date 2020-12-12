@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import IconButton from '../IconButton/IconButton';
+import { ReactComponent as DeleteIcon } from '../../icons/delete.svg';
 
 export default function Contact({ name, number, onDeleteContact }) {
   return (
@@ -6,9 +8,10 @@ export default function Contact({ name, number, onDeleteContact }) {
       <p>
         {name}:{number}
       </p>
-      <button type="button" onClick={onDeleteContact}>
-        Delete contact
-      </button>
+
+      <IconButton onClick={onDeleteContact} aria-label="Delete contact">
+        <DeleteIcon width="20" height="20" fill="#fff" />
+      </IconButton>
     </div>
   );
 }
